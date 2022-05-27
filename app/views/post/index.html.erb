@@ -1,0 +1,17 @@
+
+<h1>Aplicación Noticias</h1>
+
+<% @pager.each do |item| %>
+    <p>Creador: <%= item["source"]["name"] %></p>
+    <p>Autor: <%= item["author"] %></p>
+    <p>Titular: <%= item["title"] %></p>
+    <p>Noticia: <%= item["description"] %></p><br>
+    <%= image_tag item["urlToImage"], size: "200x200" %>  <br>
+    <p><%= link_to  item["url"] %></p>
+    <hr>
+<% end %>
+
+<br><br>
+<%= paginate @pager %>
+
+
